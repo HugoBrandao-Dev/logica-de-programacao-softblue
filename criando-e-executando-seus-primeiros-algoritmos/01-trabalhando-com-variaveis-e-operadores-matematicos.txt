@@ -1,0 +1,18 @@
+início {
+    caractere: texto;
+    caractere: nome_usuario;
+    inteiro: idade;
+    real: altura;
+    
+    texto = "Olá, mundo!!";
+    leia("Informe seu nome", nome_usuario);
+    leia("Qual é a sua idade, " + nome_usuario + "?", idade);
+    leia("Por fim, sua altura?", altura);
+    
+    escreva(texto);
+
+    caractere: info;
+    info = nome_usuario + " tem " + idade + " anos de idade e " + altura + "m de altura.";
+    
+    escreva(info);
+}

@@ -1,0 +1,19 @@
+início {
+    real: valor_a;
+    real: valor_b;
+    real: valor_c;
+    real: delta;
+    real: x1;
+    real: x2;
+    
+    leia("Informe o valor de A:", valor_a);
+    leia("Informe o valor de B:", valor_b);
+    leia("Informe o valor de C:", valor_c);
+    
+    delta = pot(valor_b, 2) - 4 * valor_a * valor_c;
+    
+    x1 = (- valor_b + rad(delta)) / (2 * valor_a);
+    x2 = (- valor_b - rad(delta)) / (2 * valor_a);
+    
+    escreva("X1: " + x1 + " | X2: " + x2);
+}

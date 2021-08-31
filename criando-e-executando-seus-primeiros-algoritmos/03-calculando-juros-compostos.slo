@@ -1,0 +1,14 @@
+início {
+    real: valor_futuro;
+    real: valor_presente;
+    real: taxa_mensal;
+    real: tempo_mes;
+    
+    leia("Valor atual:", valor_presente);
+    leia("Taxa mensal:", taxa_mensal);
+    leia("Tempo:", tempo_mes);
+    
+    valor_futuro = valor_presente * pot((1 + taxa_mensal / 100), tempo_mes);
+    
+    escreva("Valor futuro: R$" + valor_futuro);
+}

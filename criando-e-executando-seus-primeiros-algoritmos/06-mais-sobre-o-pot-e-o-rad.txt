@@ -1,0 +1,20 @@
+início {
+    real: raiz_truncada;
+    real: raiz_real;
+    real: potencia_inteira;
+    real: potencia_real;
+    
+    // Retornará um inteiro porque passamos um inteiro para o rad.
+    raiz_truncada = rad(3);
+    // Neste caso de potência, o tipo da variável também deve ser INTEIRO.
+    potencia_inteira = pot(2, 2);
+    escreva("Raiz truncada: " + raiz_truncada);
+    escreva("Potência inteira: " + potencia_inteira);
+    
+    // Retornará o valor sem arredondar (o valor real).
+    raiz_real = rad(3.0);
+    // Já neste caso de potência, o tipo da variável também deve ser REAL.
+    potencia_real = pot(2.2, 2);
+    escreva("Raiz real: " + raiz_real);
+    escreva("Potência real: " + potencia_real);
+}

@@ -1,0 +1,14 @@
+início {
+    // Gerando a tabuada de um número informado pelo usuário.
+    inteiro: numero_tabuada;
+    inteiro: contador;
+    inteiro: resultado;
+    
+    leia("A tabuada de qual número você deseja ver?", numero_tabuada);
+    
+    // O valor de INÍCIO, FIM e PASSO DEVEM ser HARDCODED, a ferramenta (IDE) não suporta variável nesta estrutura.
+    para contador de 1 até 10 passo 1 {
+        resultado = contador * numero_tabuada;
+        escreva(contador + " x " + numero_tabuada + " = " + resultado);
+    }
+}

@@ -1,0 +1,20 @@
+início {
+    // Mostrar PARES em um intervalo fornecido pelo usuário
+    inteiro: limite_superior;
+    inteiro: limite_inferior;
+    inteiro: contador;
+    
+    leia("Valor mínimo:", limite_inferior);
+    leia("Valor máximo:", limite_superior);
+    
+    contador = limite_inferior;
+    se (limite_inferior % 2 == 1) {
+        // Adicionada mais um para se tornar par, caso o limite_inferior fornecido pelo usuário seja impar.
+        contador = contador + 1;
+    }
+    
+    enquanto(contador <= limite_superior) {
+        escreva(contador);
+        contador = contador + 2;
+    }
+}

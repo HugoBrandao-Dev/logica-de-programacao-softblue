@@ -1,0 +1,18 @@
+início {
+    inteiro: idade;
+    caractere: categoria;
+
+    leia("Qual a sua idade?", idade);
+    
+    se (idade < 0) {
+        categoria = "Idade inválida";
+    } senão se (idade <= 12) {
+        categoria = "Criança";
+    } senão se (idade <= 17) {
+        categoria = "Adolecente";
+    } senão {
+        categoria = "Adulto";
+    }
+    
+    escreva("A idade é de um(a): " + categoria);
+}

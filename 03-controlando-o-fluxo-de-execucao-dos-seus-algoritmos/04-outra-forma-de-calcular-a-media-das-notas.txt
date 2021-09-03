@@ -1,0 +1,20 @@
+início {
+    // Algoritmo que calcula a média de inúmeras notas fornecidas pelo usuário.
+    inteiro: quantidade_notas;
+    real: nota;
+    real: somatorio_notas;
+    real: media_notas;
+    
+    somatorio_notas = 0;
+    quantidade_notas = 0;
+    enquanto(nota >= 0) {
+        leia("Informe uma nota ou um número negativo para calcular a média:", nota);
+        se (nota >= 0) {
+            somatorio_notas = somatorio_notas + nota;
+            quantidade_notas = quantidade_notas + 1;
+        }
+    }
+    
+    media_notas = somatorio_notas / quantidade_notas;
+    escreva("A média da(s) " + quantidade_notas + " nota(s) é " + media_notas);
+}

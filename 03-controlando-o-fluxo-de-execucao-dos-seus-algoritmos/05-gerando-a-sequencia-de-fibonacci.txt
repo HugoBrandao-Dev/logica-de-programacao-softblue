@@ -1,0 +1,26 @@
+início {
+    // Calculando a sequencia de fibonacci baseado na quantidade de números que o usuário deseja ver
+    inteiro: primeiro_valor;
+    inteiro: segundo_valor;
+    inteiro: terceiro_valor; // Será a soma do primeiro_valor e segundo_valor
+    inteiro: quantidade_valores;
+    inteiro: contador;
+    
+    primeiro_valor = 0;
+    segundo_valor = 1;
+    leia("Quantos números da sequência deseja ver?", quantidade_valores);
+    se (quantidade_valores >= 1) {
+        escreva("1 - " + primeiro_valor);
+    }
+    se (quantidade_valores >= 2) {
+        escreva("2 - " + segundo_valor);
+    }
+    contador = 3;
+    enquanto(contador <= quantidade_valores) {
+        terceiro_valor = primeiro_valor + segundo_valor;
+        primeiro_valor = segundo_valor;
+        segundo_valor = terceiro_valor;
+        escreva(contador + " - " + terceiro_valor);
+        contador = contador + 1;
+    }
+}

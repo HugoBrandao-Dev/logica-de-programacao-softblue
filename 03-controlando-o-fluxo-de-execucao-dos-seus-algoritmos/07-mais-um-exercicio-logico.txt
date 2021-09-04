@@ -1,0 +1,13 @@
+início {
+    // Testando problema sobre ordem de precedência passado pelo professor.
+    // Variáveis
+    inteiro: x;
+    lógico: resultado;
+    
+    x = 1;
+    // Aritmético > Relacional > Lógico
+    // Dará erro se retirar os () depois do "não"
+    resultado = verdadeiro e não(x > 2) ou 5 + 2 == 7 e x <> 5;
+    
+    escreva(resultado);
+}

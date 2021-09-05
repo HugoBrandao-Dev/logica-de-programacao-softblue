@@ -1,0 +1,38 @@
+// ALGORITMO QUE SIMULA UM DEPÓSITO
+
+// Variável customizadas
+tipo nome {
+    caractere: primeiro_nome;
+    caractere: sobrenome;
+}
+
+tipo conta {
+    inteiro: numero;
+    nome: titular;
+    real: saldo;
+}
+
+início {
+    // Variáveis
+    inteiro: contador;
+
+    // Variáveis customizadas
+    conta: contas[2];
+    nome: nome1;
+    nome: nome2;
+
+    nome1.primeiro_nome = "Pedro";
+    nome1.sobrenome = "Alves";
+    contas[0].numero = 1234;
+    contas[0].titular = nome1;
+    contas[0].saldo = 500;
+
+    nome2.primeiro_nome = "Dinorá";
+    nome2.sobrenome = "Oliveiro";
+    contas[1].numero = 9876;
+    contas[1].titular = nome2;
+    contas[1].saldo = 750;
+
+    escreva(contas[0]);
+    escreva(contas[1]);
+}

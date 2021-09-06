@@ -1,0 +1,19 @@
+início {
+    // Variáveis
+    real: taxa_inicial;
+    real: taxa_final;
+    real: taxa_crescimento;
+    
+    taxa_inicial = 7;
+    taxa_final = 200;
+    taxa_crescimento = calcularTaxaCrescimento(taxa_inicial, taxa_final);
+    escreva("A taxa de crescimento é de " + taxa_crescimento + "%");
+}
+
+função calcularTaxaCrescimento(real: taxa_inicial, real: taxa_final) -> real {
+    real: taxa_crescimento;
+    
+    taxa_crescimento = ((taxa_final - taxa_inicial) / taxa_inicial) * 100;
+    
+    retorne taxa_crescimento;
+}

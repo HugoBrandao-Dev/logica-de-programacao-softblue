@@ -1,0 +1,26 @@
+início {
+    // Variáveis
+    inteiro: valor_usuario;
+        
+    // Código
+    leia("Fatorial de qual valor você deseja saber?", valor_usuario);
+    escreva(fatorial(valor_usuario));
+}
+
+// Uma função recursiva para calcular o fatorial de um número fornecido pelo usuário
+função fatorial(inteiro: valor_usuario) -> inteiro {
+    se (valor_usuario == 0) {
+        retorne 1;
+    }
+    /*
+    
+            |     Para !5        /|\
+            |     !5 * (!5-1)     |
+            |     !4 * (!4-1)     |
+    CHAMADA |     !3 * (!3-1)     | RESOLUÇÃO
+            |     !2 * (!2-1)     |
+           \|/     !1 * (!1-1)    |
+    
+    */
+    retorne valor_usuario * fatorial(valor_usuario - 1); // !n * (!n-1)
+}

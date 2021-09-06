@@ -1,0 +1,30 @@
+início {
+    // ALGORITMO PARA ENCONTRAR O MAIOR VALOR DE UMA SEQUENCIA (ARRAY) PASSADO PELO USUÁRIO
+    
+    // Variáveis
+    inteiro: sequencia[5];
+    inteiro: maior_valor;
+    
+    sequencia[0] = 4;
+    sequencia[1] = 8;
+    sequencia[2] = 1;
+    sequencia[3] = 5;
+    sequencia[4] = 7;
+    
+    maior_valor = encontrarMaiorValor(sequencia);
+    
+    escreva("O maior valor é " + maior_valor + ".");
+}
+
+função encontrarMaiorValor(inteiro: sequencia[5]) -> inteiro {
+    inteiro: maior;
+    inteiro: contador;
+
+    para contador de 0 até 4 passo 1 {
+        se (sequencia[contador] > maior) {
+            maior = sequencia[contador];
+        }
+    }
+    
+    retorne maior;
+}

@@ -35,12 +35,20 @@ início {
         
         se (efetuarJogada(t, jogadores[numero_jogador], jogada)) {
             imprimirTabuleiro(t);
-            
+            escreva();
             // Alterna entre jogadores, isso é usa em "vetores circulares".
             numero_jogador = (numero_jogador + 1) % 2;
         } senão {
             escreva("Jogada inválida. Tente novamente.");
         }
+    }
+    
+    se (verificarJogoAcabou(t)) {
+        jogador: ganhador;
+        ganhador = jogadores[(numero_jogador + 1) % 2];
+        escreva("O jogador " + ganhador.nome + " ganhou!");
+    } senão {
+        escreva("Ninguém venceu.");
     }
 }
 
@@ -88,10 +96,50 @@ função fazerJogada(jogador: jogador) -> jogada {
 }
 
 função verificarTabuleiroCheio(tabuleiro: t) -> lógico {
-    retorne falso;
+    inteiro: linha;
+    inteiro: coluna;
+    
+    para linha de 0 até 2 passo 1 {
+        para coluna de 0 até 2 passo 1 {
+            se (t.m[linha][coluna] == " ") {
+                retorne falso;
+            }
+        }
+    }
+    retorne verdadeiro;
 }
 
 função verificarJogoAcabou(tabuleiro: t) -> lógico {
+    // Diagonais
+    se (t.m[0][0] == t.m[1][1] e t.m[0][0] == t.m[2][2] e t.m[0][0] <> " ") {
+        retorne verdadeiro;
+    }
+    se (t.m[0][2] == t.m[1][1] e t.m[0][2] == t.m[2][0] e t.m[0][2] <> " ") {
+        retorne verdadeiro;
+    }
+    
+    // Linhas
+    se (t.m[0][0] == t.m[0][1] e t.m[0][0] == t.m[0][2] e t.m[0][0] <> " ") {
+        retorne verdadeiro;
+    }
+    se (t.m[1][0] == t.m[1][1] e t.m[1][0] == t.m[1][2] e t.m[1][0] <> " ") {
+        retorne verdadeiro;
+    }
+    se (t.m[2][0] == t.m[2][1] e t.m[2][0] == t.m[2][2] e t.m[2][0] <> " ") {
+        retorne verdadeiro;
+    }
+    
+    // Colunas
+    se (t.m[0][0] == t.m[1][0] e t.m[0][0] == t.m[2][0] e t.m[0][0] <> " ") {
+        retorne verdadeiro;
+    }
+    se (t.m[0][1] == t.m[1][1] e t.m[0][1] == t.m[2][1] e t.m[0][1] <> " ") {
+        retorne verdadeiro;
+    }
+    se (t.m[0][2] == t.m[1][2] e t.m[0][2] == t.m[2][2] e t.m[0][2] <> " ") {
+        retorne verdadeiro;
+    }
+    
     retorne falso;
 }
 

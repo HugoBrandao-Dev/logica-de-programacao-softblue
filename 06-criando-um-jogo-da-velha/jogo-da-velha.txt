@@ -33,11 +33,14 @@ início {
         escreva("====================================");
         jogada = fazerJogada(jogadores[numero_jogador]);
         
-        efetuarJogada(t, jogadores[numero_jogador], jogada);
-        imprimirTabuleiro(t);
-        
-        // Alterna entre jogadores, isso é usa em "vetores circulares".
-        numero_jogador = (numero_jogador + 1) % 2;
+        se (efetuarJogada(t, jogadores[numero_jogador], jogada)) {
+            imprimirTabuleiro(t);
+            
+            // Alterna entre jogadores, isso é usa em "vetores circulares".
+            numero_jogador = (numero_jogador + 1) % 2;
+        } senão {
+            escreva("Jogada inválida. Tente novamente.");
+        }
     }
 }
 
@@ -92,12 +95,16 @@ função verificarJogoAcabou(tabuleiro: t) -> lógico {
     retorne falso;
 }
 
-função efetuarJogada(tabuleiro: t, jogador: jogador, jogada: jogada) {
+função efetuarJogada(tabuleiro: t, jogador: jogador, jogada: jogada) -> lógico {
     inteiro: linha;
     inteiro: coluna;
     
     linha = jogada.l - 1;
     coluna = jogada.c - 1;
     
+    se (t.m[linha][coluna] <> " ") {
+        retorne falso;
+    }
     t.m[linha][coluna] = jogador.simbolo;
+    retorne verdadeiro;
 }

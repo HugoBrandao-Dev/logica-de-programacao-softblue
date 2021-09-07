@@ -21,7 +21,15 @@ início {
     limparTabuleiro(t);
     criarJogadores(jogadores);
     imprimirTabuleiro(t);
-    fazerJogada(jogadores[0]);
+    
+    enquanto(não verificarTabuleiroCheio(t) e não verificarJogoAcabou(t)) {
+        jogada: jogada;
+        jogada = fazerJogada(jogadores[0]);
+        
+        realizarJogada(t, jogadores[0], jogada);
+        escreva("====================================");
+            imprimirTabuleiro(t);
+    }
 }
 
 função criarJogadores(jogador: jogadores[2]) {
@@ -64,6 +72,23 @@ função fazerJogada(jogador: jogador) -> jogada {
     
     leia("Jogador " + jogador.nome + " => Linha:", jogada.l);
     leia("Jogador " + jogador.nome + " => Coluna:", jogada.c);
-    escreva(jogador.nome + ":" + "[ Linha: " + jogada.l + ", Coluna: " + jogada.c +" ]");
     retorne jogada;
+}
+
+função verificarTabuleiroCheio(tabuleiro: t) -> lógico {
+    retorne falso;
+}
+
+função verificarJogoAcabou(tabuleiro: t) -> lógico {
+    retorne falso;
+}
+
+função realizarJogada(tabuleiro: t, jogador: jogador, jogada: jogada) {
+    inteiro: linha;
+    inteiro: coluna;
+    
+    linha = jogada.l - 1;
+    coluna = jogada.c - 1;
+    
+    t.m[linha][coluna] = jogador.simbolo;
 }

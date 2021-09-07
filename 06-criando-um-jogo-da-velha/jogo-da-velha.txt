@@ -3,12 +3,33 @@ tipo tabuleiro {
     caractere: m[3][3];
 }
 
+tipo jogador {
+    caractere: nome;
+    caractere: simbolo;
+}
+
+tipo jogada {
+    inteiro: l;
+    inteiro: c;
+}
+
 início {
     // Variáveis customizadas
     tabuleiro: t;
+    jogador: jogadores[2];
     
     limparTabuleiro(t);
+    criarJogadores(jogadores);
     imprimirTabuleiro(t);
+    fazerJogada(jogadores[0]);
+}
+
+função criarJogadores(jogador: jogadores[2]) {
+    jogadores[0].nome = "A";
+    jogadores[0].simbolo = "O";
+    
+    jogadores[1].nome = "B";
+    jogadores[1].simbolo = "X";
 }
 
 função limparTabuleiro(tabuleiro: t) {
@@ -26,6 +47,7 @@ função imprimirTabuleiro(tabuleiro: t) {
     inteiro: l;
     
     para l de 0 até 2 passo 1 {
+        // Escreval impede que a linha seja quebrada
         escreval(t.m[l][0]);
         escreval(" | ");
         escreval(t.m[l][1]);
@@ -35,4 +57,13 @@ função imprimirTabuleiro(tabuleiro: t) {
             escreva("---------");
         }
     }
+}
+
+função fazerJogada(jogador: jogador) -> jogada {
+    jogada: jogada;
+    
+    leia("Jogador " + jogador.nome + " => Linha:", jogada.l);
+    leia("Jogador " + jogador.nome + " => Coluna:", jogada.c);
+    escreva(jogador.nome + ":" + "[ Linha: " + jogada.l + ", Coluna: " + jogada.c +" ]");
+    retorne jogada;
 }
